@@ -1,0 +1,96 @@
+================================================================================
+🚀 THÔNG TIN AI v3.1 - CÀI ĐẶT NHANH
+================================================================================
+
+📦 ZIP CHỨA:
+  ✅ index.html (cập nhật link paths)
+  ✅ css/style.css
+  ✅ js/script.js, data.js, translations.js
+  ✅ favicon.svg
+  ✅ images/ (folder trống)
+
+================================================================================
+3 BƯỚC CÀI ĐẶT:
+
+1️⃣  GIẢI NÉN
+    unzip thong-tin-ai-clean-v3.1.zip
+
+2️⃣  SAO LƯU FILES CŨ (tuỳ chọn)
+    cp -r old-folder old-folder.backup
+
+3️⃣  COPY VÀO DỰ ÁN
+    cp -r thong-tin-ai-clean/* /đường/dẫn/dự/án
+    
+    HOẶC sử dụng folder mới:
+    cd thong-tin-ai-clean
+    python -m http.server 8000
+    http://localhost:8000
+
+================================================================================
+KIỂM TRA:
+
+Desktop:
+  □ Mở http://localhost:8000
+  □ Danh sách tools bên trái ✅
+  □ Chi tiết panel bên phải ✅
+  □ Click tool → active state ✅
+
+Mobile (DevTools):
+  □ Nhấn F12 → Responsive Mode (Ctrl+Shift+M)
+  □ Chọn iPhone
+  □ Danh sách full width ✅
+  □ Chi tiết panel dưới ✅
+  □ Click tool → chi tiết hiển thị ✅
+
+================================================================================
+GỌI CÓ GÌ MỚI:
+
+✅ Layout hai cột (desktop)
+✅ Tool cards compact (120px logo)
+✅ Chi tiết panel đầy đủ
+✅ Thay "Sử dụng ngay" → "Xem"
+✅ Sticky detail panel
+✅ Responsive trên tất cả device
+
+================================================================================
+THAY ĐỔI QUAN TRỌNG:
+
+index.html đã cập nhật link paths:
+  ✓ css/style.css
+  ✓ js/script.js
+  ✓ js/data.js
+  ✓ js/translations.js
+
+KHÔNG CẦN cập nhật lại!
+
+================================================================================
+NẾU CẦN QUAY LẠI CẤU TRÚC CŨ:
+
+1. Copy files từ css/, js/ vào root folder
+2. Cập nhật link paths trong index.html:
+   
+   Từ: <link rel="stylesheet" href="css/style.css">
+   Thành: <link rel="stylesheet" href="style.css">
+
+================================================================================
+GẶP SỰ CỐ?
+
+Chi tiết panel không hiển thị?
+  → Kiểm tra console (F12)
+  → Refresh page (Ctrl+F5)
+  → Kiểm tra js/script.js tồn tại
+
+Layout bị lệch?
+  → Clear cache (Ctrl+F5)
+  → Kiểm tra css/style.css tồn tại
+
+================================================================================
+✅ HOÀN THÀNH!
+
+Giao diện mới đã sẵn sàng!
+
+Version: 3.1
+Date: 31/07/2026
+Status: ✅ Ready for Production
+
+================================================================================
