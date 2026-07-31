@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>THÔNG TIN AI</title>
+
+    <meta name="description" content="Khám phá, tìm kiếm và so sánh các công cụ AI cho học tập, công việc và sáng tạo.">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" href="favicon.svg">
+
+</head>
+
+<body>
+
+    <!-- LOADING SCREEN -->
+    <div id="loadingScreen" class="loading-screen">
+        <div class="loading-container">
+            <div class="loading-robot">
+                <div class="robot-head">
+                    <div class="robot-eye robot-eye-left"></div>
+                    <div class="robot-eye robot-eye-right"></div>
+                </div>
+                <div class="robot-body">
+                    <div class="robot-limb robot-limb-left"></div>
+                    <div class="robot-limb robot-limb-right"></div>
+                </div>
+            </div>
+            <p class="loading-text">Đang tải...</p>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+        <div class="logo">
+
+            THÔNG TIN AI
+
+        </div>
+
+        <nav>
+
+            <a href="#" id="homeToggle" data-i18n="nav_home">Trang chủ</a>
+
+            <a href="#" id="knowledgeToggle" data-i18n="nav_knowledge">Kiến thức AI</a>
+
+            <a href="#" id="toolsToggle" data-i18n="nav_tools">Công cụ AI</a>
+
+            <a href="#" id="guideToggle" data-i18n="nav_guide">Hướng dẫn</a>
+
+        </nav>
+
+        <div class="header-right">
+
+            <button id="mobileMenuBtn" aria-label="Menu" type="button">
+
+                ☰
+
+            </button>
+
+            <div class="lang-select">
+
+                <select id="langSelect">
+
+                    <option value="vi">🇻🇳 Tiếng Việt</option>
+
+                    <option value="en">🇺🇸 English</option>
+
+                </select>
+
+            </div>
+
+            <button id="darkMode">
+
+                🌙
+
+            </button>
+
+            <button id="compactMode" type="button" aria-label="Bật giao diện thu gọn" title="Bật giao diện thu gọn">
+
+                A−
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-text">
+
+            <h1 data-i18n="hero_title">
+
+                Khám phá thế giới AI
+
+            </h1>
+
+            <p data-i18n="hero_desc">
+
+                Tổng hợp những công cụ AI tốt nhất cho nhu cầu công việc
+
+            </p>
+
+            <div class="search-box">
+
+                <input id="searchInput" type="text" data-i18n-placeholder="search_placeholder" placeholder="Tìm ChatGPT, Gemini, Claude...">
+
+                <button id="searchBtn" data-i18n="search_btn">
+
+                    Tìm kiếm
+
+                </button>
+
+                <button id="clearSearch" class="clear-search" type="button" aria-label="Xóa tìm kiếm" title="Xóa tìm kiếm">×</button>
+
+            </div>
+
+        </div>
+
+        <!-- CON ROBOT AI TRANG TRÍ GÓC HERO (ảnh CC BY-NC 4.0, nguồn: pngimg.com) -->
+        <img class="hero-robot" src="https://cdn-icons-png.flaticon.com/512/4712/4712027.png" alt="Robot AI minh hoa">
+
+    </section>
+
+
+
+    <!-- MAIN -->
+
+    <main class="main">
+
+        <!-- TIỆN ÍCH NHANH: luôn hiện trên điện thoại, không cần cuộn sidebar -->
+        <div class="quick-utilities" aria-label="Tiện ích nhanh">
+            <button type="button" data-utility="ranking" data-i18n="util_ranking">🏆 Bảng xếp hạng</button>
+            <button type="button" data-utility="newest" data-i18n="util_newest">🆕 AI mới nhất</button>
+            <button type="button" data-utility="free" data-i18n="util_free">🎁 AI miễn phí</button>
+            <button type="button" data-utility="favorites" data-i18n="util_favorites">❤️ Yêu thích</button>
+            <button type="button" data-utility="recent" data-i18n="util_recent">🕘 Đã xem gần đây</button>
+            <button type="button" data-utility="random" data-i18n="util_random">🎲 Gợi ý ngẫu nhiên</button>
+        </div>
+
+        <!-- SIDEBAR -->
+
+        <button id="sidebarToggle" class="mobile-toggle-btn" type="button">
+
+            <span>☰</span> <span data-i18n="sidebar_toggle_label">Danh mục &amp; Tiện ích</span>
+
+        </button>
+
+        <aside class="sidebar" id="sidebarPanel">
+
+            <h3 data-i18n="sidebar_title">
+
+                Danh mục
+
+            </h3>
+
+            <ul>
+
+                <li data-category="all" data-i18n="cat_all">🔥 Tất cả AI</li>
+
+                <li data-category="chat" data-i18n="cat_chat">💬 Chat AI</li>
+
+                <li data-category="image" data-i18n="cat_image">🎨 AI Hình ảnh</li>
+
+                <li data-category="video" data-i18n="cat_video">🎬 AI Video</li>
+
+                <li data-category="code" data-i18n="cat_code">💻 AI Lập trình</li>
+
+                <li data-category="finance" data-i18n="cat_finance">💰 AI Tài chính</li>
+
+                <li data-category="study" data-i18n="cat_study">📚 AI Học tập</li>
+
+            </ul>
+
+            <h3 class="utility-title" data-i18n="utility_title">Tiện ích</h3>
+
+            <ul class="utility-list">
+
+                <li data-utility="ranking" data-i18n="util_ranking">🏆 Bảng xếp hạng</li>
+
+                <li data-utility="newest" data-i18n="util_newest">🆕 AI mới nhất</li>
+
+                <li data-utility="free" data-i18n="util_free">🎁 AI miễn phí</li>
+
+                <li data-utility="favorites" data-i18n="util_favorites">❤️ Yêu thích</li>
+
+                <li data-utility="recent" data-i18n="util_recent">🕘 Đã xem gần đây</li>
+
+                <li data-utility="random" data-i18n="util_random">🎲 Gợi ý ngẫu nhiên</li>
+
+                <li data-utility="profession" data-i18n="util_profession">💼 AI theo nghề</li>
+
+            </ul>
+
+        </aside>
+
+
+
+        <!-- CONTENT -->
+
+        <section class="content">
+
+            <!-- KIẾN THỨC AI (ẩn mặc định, bấm menu mới hiện) -->
+
+            <div id="knowledge-section" class="hidden">
+
+                <div class="section-title">
+
+                    <h2 data-i18n="section_knowledge">
+
+                        Kiến thức AI
+
+                    </h2>
+
+                </div>
+
+                <div id="knowledgeContainer" class="knowledge-grid">
+
+                </div>
+
+            </div>
+
+            <!-- HƯỚNG DẪN SỬ DỤNG AI (ẩn mặc định, bấm menu mới hiện) -->
+
+            <div id="guide-section" class="hidden">
+
+                <div class="section-title">
+
+                    <h2 data-i18n="section_guide">
+
+                        Hướng dẫn sử dụng AI
+
+                    </h2>
+
+                </div>
+
+                <div id="guideContainer" class="knowledge-grid">
+
+                </div>
+
+            </div>
+
+            <!-- AI THEO NGHỀ (ẩn mặc định, bấm menu tiện ích mới hiện) -->
+
+            <div id="profession-section" class="hidden">
+
+                <div class="section-title">
+
+                    <h2 data-i18n="section_profession">
+
+                        AI theo nghề
+
+                    </h2>
+
+                </div>
+
+                <div id="professionContainer" class="profession-grid">
+
+                </div>
+
+            </div>
+
+            <!-- BẢNG XẾP HẠNG AI (ẩn mặc định, bấm menu tiện ích mới hiện) -->
+
+            <div id="ranking-section" class="hidden">
+
+                <div class="section-title">
+
+                    <h2 data-i18n="section_ranking">
+
+                        Bảng xếp hạng AI
+
+                    </h2>
+
+                    <span class="tool-count" data-i18n="ranking_note">Xếp hạng theo đánh giá người dùng</span>
+
+                </div>
+
+                <div id="rankingContainer" class="ranking-list">
+
+                </div>
+
+            </div>
+
+            <!-- CÔNG CỤ AI - LAYOUT HAI CỘT -->
+
+            <div id="tool-section" class="tool-section-wrapper">
+
+                <div class="tool-section-left">
+                    <div class="section-title">
+
+                        <h2 data-i18n="section_tools">
+
+                            Công cụ AI nổi bật
+
+                        </h2>
+
+                        <div class="tool-controls">
+                            <span id="toolCount" class="tool-count" aria-live="polite"></span>
+                            <label class="sort-label" for="sortTools" data-i18n="sort_label">Sắp xếp</label>
+                            <select id="sortTools" class="sort-select" aria-label="Sắp xếp công cụ AI">
+                                <option value="featured" data-i18n="sort_featured">Nổi bật</option>
+                                <option value="rating" data-i18n="sort_rating">Đánh giá cao</option>
+                                <option value="name-asc" data-i18n="sort_name_asc">Tên A–Z</option>
+                                <option value="name-desc" data-i18n="sort_name_desc">Tên Z–A</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <div id="toolContainer" class="tool-grid">
+
+                    </div>
+                </div>
+
+                <div class="tool-section-right">
+                    <div id="toolDetailPanel" class="tool-detail-panel">
+                        <div class="detail-placeholder">
+                            <p data-i18n="select_tool">Chọn công cụ AI để xem chi tiết</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- 6 Ô LỢI ÍCH CUỐI TRANG -->
+
+    <section class="footer-stats">
+
+        <div class="stat-box">
+
+            <div class="stat-icon">⏱️</div>
+
+            <h4 data-i18n="stat1_title">Tiết kiệm thời gian</h4>
+
+            <p data-i18n="stat1_desc">Làm việc nhanh hơn với AI</p>
+
+        </div>
+
+        <div class="stat-box">
+
+            <div class="stat-icon">📈</div>
+
+            <h4 data-i18n="stat2_title">Nâng cao hiệu suất</h4>
+
+            <p data-i18n="stat2_desc">Hoàn thành nhiều hơn trong thời gian ngắn</p>
+
+        </div>
+
+        <div class="stat-box">
+
+            <div class="stat-icon">💰</div>
+
+            <h4 data-i18n="stat3_title">Tăng thu nhập</h4>
+
+            <p data-i18n="stat3_desc">Cơ hội nhiều hơn với công cụ AI</p>
+
+        </div>
+
+        <div class="stat-box">
+
+            <div class="stat-icon">🧠</div>
+
+            <h4 data-i18n="stat4_title">Học hỏi nhanh hơn</h4>
+
+            <p data-i18n="stat4_desc">Tiếp cận kiến thức mới dễ dàng hơn</p>
+
+        </div>
+
+        <div class="stat-box">
+
+            <div class="stat-icon">🎨</div>
+
+            <h4 data-i18n="stat5_title">Sáng tạo không giới hạn</h4>
+
+            <p data-i18n="stat5_desc">Biến ý tưởng thành hiện thực nhanh chóng</p>
+
+        </div>
+
+        <div class="stat-box">
+
+            <div class="stat-icon">🌐</div>
+
+            <h4 data-i18n="stat6_title">Kết nối xu hướng AI</h4>
+
+            <p data-i18n="stat6_desc">Luôn cập nhật công nghệ mới nhất</p>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p data-i18n="footer_text">
+
+            © 2026 THÔNG TIN AI
+
+        </p>
+
+        <p class="credit">
+
+            
+
+        </p>
+
+    </footer>
+
+    <button id="backToTop" class="back-to-top" type="button" aria-label="Lên đầu trang">↑</button>
+
+
+
+    <script src="js/data.js"></script>
+
+    <script src="js/translations.js"></script>
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
